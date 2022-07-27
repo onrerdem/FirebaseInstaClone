@@ -14,6 +14,9 @@
 		13B3DDB5289153720052683F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B3DDB4289153720052683F /* Assets.xcassets */; };
 		13B3DDB8289153720052683F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B3DDB6289153720052683F /* LaunchScreen.storyboard */; };
 		13B3DDC0289153E90052683F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B3DDBF289153E90052683F /* GoogleService-Info.plist */; };
+		13B3DDC228917A640052683F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3DDC128917A640052683F /* FeedViewController.swift */; };
+		13B3DDC428917A780052683F /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3DDC328917A780052683F /* UploadViewController.swift */; };
+		13B3DDC628917A8C0052683F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3DDC528917A8C0052683F /* SettingsViewController.swift */; };
 		F60950BDA114B47DC84E5062 /* Pods_FirebaseInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91F7D5B91CEFCB492C98A00 /* Pods_FirebaseInstagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		13B3DDB7289153720052683F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B3DDB9289153720052683F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B3DDBF289153E90052683F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13B3DDC128917A640052683F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		13B3DDC328917A780052683F /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		13B3DDC528917A8C0052683F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8C78A08A714C734D03147784 /* Pods-FirebaseInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseInstagram.release.xcconfig"; path = "Target Support Files/Pods-FirebaseInstagram/Pods-FirebaseInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		C91F7D5B91CEFCB492C98A00 /* Pods_FirebaseInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D830A1C3C5CDD77FD2984302 /* Pods-FirebaseInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseInstagram.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseInstagram/Pods-FirebaseInstagram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +74,9 @@
 				13B3DDAB289153710052683F /* AppDelegate.swift */,
 				13B3DDAD289153710052683F /* SceneDelegate.swift */,
 				13B3DDAF289153710052683F /* ViewController.swift */,
+				13B3DDC128917A640052683F /* FeedViewController.swift */,
+				13B3DDC328917A780052683F /* UploadViewController.swift */,
+				13B3DDC528917A8C0052683F /* SettingsViewController.swift */,
 				13B3DDB1289153710052683F /* Main.storyboard */,
 				13B3DDB4289153720052683F /* Assets.xcassets */,
 				13B3DDB6289153720052683F /* LaunchScreen.storyboard */,
@@ -91,7 +100,6 @@
 				D830A1C3C5CDD77FD2984302 /* Pods-FirebaseInstagram.debug.xcconfig */,
 				8C78A08A714C734D03147784 /* Pods-FirebaseInstagram.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,8 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B3DDB0289153710052683F /* ViewController.swift in Sources */,
+				13B3DDC428917A780052683F /* UploadViewController.swift in Sources */,
 				13B3DDAC289153710052683F /* AppDelegate.swift in Sources */,
+				13B3DDC228917A640052683F /* FeedViewController.swift in Sources */,
 				13B3DDAE289153710052683F /* SceneDelegate.swift in Sources */,
+				13B3DDC628917A8C0052683F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

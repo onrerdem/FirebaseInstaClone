@@ -74,6 +74,7 @@
                             <constraint firstItem="JHD-J1-6wx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ycv-Zi-3MJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OjM-N2-SBT"/>
                     <connections>
                         <outlet property="emailTxt" destination="JHD-J1-6wx" id="kHS-DJ-6IL"/>
                         <outlet property="passwordTxt" destination="Mdy-ET-UM7" id="mDO-Ow-Btn"/>
@@ -84,10 +85,60 @@
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="79.6875"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="QBD-hZ-M0A">
+            <objects>
+                <viewController id="pc4-N5-AeW" customClass="SettingsViewController" customModule="FirebaseInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="THH-BV-7fa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxy-d9-itJ">
+                                <rect key="frame" x="66" y="181" width="257" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZYI-Eb-HPd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-Sm-gKS">
+                                <rect key="frame" x="114" y="411" width="162" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="2Jk-NP-iXG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="pc4-N5-AeW" eventType="touchUpInside" id="BUM-H6-d6M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bYN-gc-j1x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wxy-d9-itJ" firstAttribute="leading" secondItem="bYN-gc-j1x" secondAttribute="leading" constant="66" id="34t-Tf-mMd"/>
+                            <constraint firstItem="Wxy-d9-itJ" firstAttribute="centerX" secondItem="THH-BV-7fa" secondAttribute="centerX" id="8NV-dg-gSU"/>
+                            <constraint firstItem="Wxy-d9-itJ" firstAttribute="centerX" secondItem="iNb-Sm-gKS" secondAttribute="centerX" id="ERa-zF-sc3"/>
+                            <constraint firstItem="bYN-gc-j1x" firstAttribute="bottom" secondItem="iNb-Sm-gKS" secondAttribute="bottom" constant="265" id="f4V-du-fUk"/>
+                            <constraint firstItem="iNb-Sm-gKS" firstAttribute="leading" secondItem="bYN-gc-j1x" secondAttribute="leading" constant="114" id="n07-3I-Clj"/>
+                            <constraint firstItem="Wxy-d9-itJ" firstAttribute="top" secondItem="bYN-gc-j1x" secondAttribute="top" constant="137" id="qSq-FJ-LUs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear.circle" catalog="system" id="AAi-S1-96Q"/>
+                    <connections>
+                        <outlet property="emailLbl" destination="Wxy-d9-itJ" id="hS3-hw-rLZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toVC" modalPresentationStyle="fullScreen" id="hoC-Jk-EVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tf5-Gs-OqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.6153846153845" y="755.68720379146919"/>
+        </scene>
         <!--Upload-->
         <scene sceneID="JCT-NY-rzA">
             <objects>
-                <viewController id="ssk-Jr-azX" sceneMemberID="viewController">
+                <viewController id="ssk-Jr-azX" customClass="UploadViewController" customModule="FirebaseInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAv-Pn-6T8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,12 +149,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fP-P5-Jh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="355"/>
+            <point key="canvasLocation" x="1705" y="80"/>
         </scene>
         <!--Feed-->
         <scene sceneID="unU-DY-lVd">
             <objects>
-                <viewController id="edc-50-ig1" sceneMemberID="viewController">
+                <viewController id="edc-50-ig1" customClass="FeedViewController" customModule="FirebaseInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GhR-Mw-CIE">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,12 +165,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myk-ee-0RQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="-252"/>
+            <point key="canvasLocation" x="1706" y="-569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8JR-4B-ZDR">
             <objects>
-                <tabBarController id="FZS-RP-hlm" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="FZS-RP-hlm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RfY-pp-bkC"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a8B-HJ-g4H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -129,6 +180,7 @@
                     <connections>
                         <segue destination="edc-50-ig1" kind="relationship" relationship="viewControllers" id="J6Y-SV-lTD"/>
                         <segue destination="ssk-Jr-azX" kind="relationship" relationship="viewControllers" id="4Bx-kL-nuK"/>
+                        <segue destination="pc4-N5-AeW" kind="relationship" relationship="viewControllers" id="qfn-pH-Y7Y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzk-eM-wA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,6 +189,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
