@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 import FirebaseStorage
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var commentLbl: UITextField!
     @IBOutlet weak var ımageView: UIImageView!
@@ -21,7 +23,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
         ımageView.addGestureRecognizer(gestureRecognizer)
         
         
-
+        
     }
     
     @objc func imageSelected(){
@@ -29,7 +31,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
- 
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -37,35 +39,32 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
         self.dismiss(animated: true)
         
     }
+
     
     @IBAction func uploadBtn(_ sender: Any) {
+        
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
         let mediaFolder = storageRef.child("media")
         
-        if let data = ımageView.image?.jpegData(compressionQuality: 0.5){
+        if let imageData = ımageView.image?.jpegData(compressionQuality: 0.5){
             
             let uuid = UUID().uuidString
-            let imageRef = mediaFolder.child("\(uuid).png")
-            
-            imageRef.putData(data) { metaData, error in
-                if error != nil {
-                    self.getAlert(errorInput: error!.localizedDescription)
+            let imageRef = mediaFolder.child("media/\(uuid).jpeg")
+            imageRef.putData(imageData, metadata: nil) { metaData, putError in
+                if putError != nil {
+                    self.getAlert(errorInput: putError?.localizedDescription ?? "FirebaseStorage putdata error")
                 }else{
-                    imageRef.downloadURL { url, error in
-                        if error != nil{
-                            self.getAlert(errorInput: error?.localizedDescription ?? "Error")
-                        }else{
-                            let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                    imageRef.downloadURL { imageUrl, urlError in
+                        if let img = imageUrl?.absoluteString as? String{
+                            self.commentLbl.text = img
                         }
-                        
                     }
                 }
             }
-        }
             
+        }
         
     }
     

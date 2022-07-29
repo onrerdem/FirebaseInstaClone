@@ -9,21 +9,42 @@ import UIKit
 import FirebaseAuth
 
 class ViewController: UIViewController {
-    @IBOutlet weak var passwordTxt: UITextField!
     
+    @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func signinBtn(_ sender: Any) {
-        performSegue(withIdentifier: "toTBC", sender: nil)
+        
+        let email = emailTxt.text
+        let password = passwordTxt.text
+        
+        if (email != "") && (password != "") {
+            Auth.auth().signIn(withEmail: email!, password: password!) { dataResult, signinError in
+                if signinError != nil {
+                    self.getAlert(errorInput: signinError?.localizedDescription ?? "Singin Error")
+                } else {
+                    self.performSegue(withIdentifier: "toTBC", sender: nil)
+                }
+            }
+        } else {
+            self.getAlert(errorInput: "Email/Password?")
+        }
+            
+        
     }
     
     @IBAction func signupBtn(_ sender: Any) {
-        if emailTxt.text != "" && passwordTxt.text != "" {
-            Auth.auth().createUser(withEmail: emailTxt.text!, password: passwordTxt.text!) { authData, error in
+        
+        let email = emailTxt.text
+        let password = passwordTxt.text
+        
+        if email != "" && password != "" {
+            Auth.auth().createUser(withEmail: email!, password: password!) { authData, error in
                 if error != nil {
                     self.getAlert(errorInput: error?.localizedDescription ?? "Error")
                     
